@@ -1,0 +1,31 @@
+{
+  "apps": [
+    {
+      "name": "simpleExpress",//应用程序名称
+      "cwd": "./",//根目录：应用程序所在的目录
+      "script": "./bin/www",//应用程序的脚本路径
+      "error_file":"./logs/app-err.log",//自定义应用程序的错误日志文件
+      "out_file":"./logs/app-out.log",  //自定义应用程序日志文件
+      "log_date_format":"YYYY-MM-DD HH:mm Z", //日期格式
+      "pid_file":"./pids/node-geo-api.pid",//自定义应用程序的pid文件
+      "instances": 6,
+      "min_uptime": "200s",//最小运行时间，这里设置的是60s即如果应用程序在60s内退出，pm2会认为程序异常退出，此时触发重启max_restarts设置数量
+      "max_restarts": 10,//设置应用程序异常退出重启的次数，默认15次（从0开始计数）
+      "max_memory_restart": "1M",
+      "cron_restart": "1 0 * * *",//定时启动，解决重启能解决的问题
+      "watch":[
+        "bin",
+        "common",
+        "configs",
+        "public",
+        "routes",
+        "views"
+      ],//需要监控的目录
+      "merge_logs": true,
+      "exec_interpreter": "node",//应用程序的脚本类型，这里使用的shell，默认是nodejs
+      "exec_mode": "fork",//应用程序启动模式，这里设置的是cluster_mode（集群），默认是fork
+      "autorestart": false,//启用/禁用应用程序崩溃或退出时自动重启
+      "vizion": false,//启用/禁用vizion特性(版本控制)
+    }
+  ]
+}

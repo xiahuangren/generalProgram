@@ -1,0 +1,15 @@
+{
+  "mongo": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "Game",
+    "user":"",
+    "password":""
+  },
+  "statsMongo": {
+    "host": "dds-2ze0f432a6c9dad41.mongodb.rds.aliyuncs.com",
+    "port": 3717,
+    "database": "GameCityLBank"
+  },
+  "AutoIncrementStartAt":100000
+}

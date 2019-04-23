@@ -1,0 +1,2 @@
+1.小游戏基本框架使用nodejs+express+pm2+mongodb
+2.只做游戏的基本信息记录关卡、道具、体力和platformID
